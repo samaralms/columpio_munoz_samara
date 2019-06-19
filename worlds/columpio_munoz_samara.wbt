@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.4100585891749828 -0.9066712338335933 -0.0989910459713003 0.5204387700795169
-  position -1.1082461790739684 1.3425999119614143 3.6498517272694193
+  orientation -0.6924996503761456 -0.7096007576651651 -0.1300422967727799 0.5174135364692366
+  position -0.29521008081080247 1.4101285356260946 2.617723556994334
 }
 TexturedBackground {
 }
@@ -57,13 +57,13 @@ Solid {
             }
           ]
         }
-        Transform {
+        DEF GROUP2 Transform {
           translation 1.0199999999999996 0 0
           children [
             USE GROUPA
           ]
         }
-        Transform {
+        DEF BARRA Transform {
           translation 0.5002944823488886 0.8696017193294119 0.19000000000000003
           rotation 0 0 1 1.57
           children [
@@ -73,10 +73,10 @@ Solid {
             }
             HingeJoint {
               jointParameters HingeJointParameters {
-                anchor -0.05 0 0
+                anchor -0.06 0 0
               }
               endPoint Solid {
-                translation -0.05 0 0
+                translation -0.06 0 0
                 children [
                   Shape {
                     appearance PBRAppearance {
@@ -88,36 +88,41 @@ Solid {
                   }
                   HingeJoint {
                     jointParameters HingeJointParameters {
+                      axis 0 1 0
+                      anchor -0.025 0 0
                     }
                     endPoint Solid {
-                      translation -0.1 0 0
-                      rotation 0 0 1 0
+                      translation -0.16 0 0
                       children [
                         Shape {
                           appearance DEF YELLOW PBRAppearance {
                             baseColor 0.9294117647058824 0.8313725490196079 0
                           }
                           geometry Box {
-                            size 0.3 0.05 0.01
+                            size 0.3 0.1 0.01
                           }
                         }
                         Transform {
-                          translation -0.15 0 0
+                          translation -0.1 0 0
                           rotation 1 0 0 1.57
                           children [
                             Shape {
                               appearance USE YELLOW
                               geometry Cylinder {
-                                height 0.04
+                                height 0.03
                                 radius 0.08
                               }
                             }
                           ]
                         }
                       ]
+                      physics Physics {
+                      }
                     }
                   }
                 ]
+                physics Physics {
+                }
               }
             }
           ]
