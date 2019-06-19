@@ -1,0 +1,63 @@
+#VRML_SIM R2019a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.11061398866066802 0.9878096424308207 0.1095292464744995 1.5159380669597795
+  position 3.3754165750511045 0.9968365485085129 0.9788567404220412
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+}
+Solid {
+  children [
+    DEF BASE Group {
+      children [
+        DEF GROUPA Group {
+          children [
+            Transform {
+              translation 0 0.45 0
+              rotation 1 0 0 0.45
+              children [
+                Shape {
+                  appearance DEF BLUE PBRAppearance {
+                    baseColor 0.12549019607843137 0.2901960784313726 0.5294117647058824
+                  }
+                  geometry DEF BAR1 Cylinder {
+                    height 1
+                    radius 0.03
+                  }
+                }
+              ]
+            }
+            Transform {
+              translation 0 0.45 0.42
+              rotation 1 0 0 -0.45
+              children [
+                Shape {
+                  appearance USE BLUE
+                  geometry USE BAR1
+                }
+              ]
+            }
+            Transform {
+              translation 0 0.5 0.2
+              rotation 1 0 0 1.57
+              children [
+                Shape {
+                  appearance USE BLUE
+                  geometry Cylinder {
+                    height 0.4
+                    radius 0.03
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
