@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.5929650517534212 -0.8037792198729926 -0.04828470875366213 0.20192706838711455
-  position 0.12977293994592287 1.094571857639116 3.5791231875482654
+  orientation -0.9072456303524448 -0.4184999420944084 -0.04199005445783232 0.2202900498761493
+  position 0.46166929921765687 1.3176864948736848 3.517550244005735
 }
 TexturedBackground {
 }
@@ -13,7 +13,7 @@ Floor {
 }
 Solid {
   children [
-    DEF BASE Group {
+    DEF BASE_C Group {
       children [
         DEF GROUPA Group {
           children [
@@ -70,6 +70,23 @@ Solid {
             Shape {
               appearance USE BLUE
               geometry USE BAR1
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+              }
+              endPoint Solid {
+                translation -0.05 0 0
+                children [
+                  Shape {
+                    appearance PBRAppearance {
+                      baseColor 0.8 0 0
+                    }
+                    geometry Box {
+                      size 0.05 0.1 0.1
+                    }
+                  }
+                ]
+              }
             }
           ]
         }
